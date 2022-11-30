@@ -1,8 +1,15 @@
 const express = require('express')
+
+// Call express router to be able to Route requests to correct Controller.
 const router = express.Router()
+
 const { getGoals, setGoal, putGoal, deleteGoal } = require('../controllers/goalController')
 
-router.route('/').get(getGoals).post(setGoal)
-router.route('/:id').put(putGoal).delete(deleteGoal)
+// Middleware protect function that runs before the Route function is run, to check login token is present. 
+const { protect } = require('../middleware/authMiddleware')
+
+// Routes data for same route to multiple Controllers for different request types. 
+router.route('/').get(protect, getGoals).post(protect, setGoal)
+router.route('/:id').put(protect, putGoal).delete(protect, deleteGoal)
 
 module.exports = router
