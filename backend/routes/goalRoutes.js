@@ -10,6 +10,6 @@ const { protect } = require('../middleware/authMiddleware')
 
 // Routes data for same route to multiple Controllers for different request types. 
 router.route('/').get(protect, getGoals).post(protect, setGoal)
-router.route('/:id').put(protect, putGoal).delete(protect, deleteGoal)
+router.route('/:id').post(protect, putGoal).delete(protect, deleteGoal)
 
 module.exports = router
