@@ -24,13 +24,13 @@ app.use('/api/users', require('./routes/userRoutes'))
 app.use(errorHandler)
 
 // Serve frontend
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')))
+// if(process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')))
-} else {
-  app.get('/', (req, res) => res.send('Please set environment to Production'))
-}
+//   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')))
+// } else {
+//   app.get('/', (req, res) => res.send('Please set environment to Production'))
+// }
 
 // Binds to ENV.Port and console logs message when server is started
 app.listen(port, () => console.log(`Server started on port ${port}`))
