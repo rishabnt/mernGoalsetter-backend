@@ -1,4 +1,8 @@
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
+const multer = require('multer')
+const GridFsStorage = require('multer-gridfs-storage')
+const { config } = require('dotenv')
 
 const connectDB = async () => {
   try {

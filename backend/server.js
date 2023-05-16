@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 // Links 2 parent routes to the route file and functions
-app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/notes', require('./routes/noteRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
 
 // Sets express to use ErrorHandler, overridden in Error Middleware file
