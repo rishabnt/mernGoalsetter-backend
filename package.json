@@ -1,7 +1,7 @@
 {
-  "name": "mern-goals",
+  "name": "mern-audio",
   "version": "1.0.0",
-  "description": "Goal setter app built using the MERN stack",
+  "description": "Voice notes app built using the MERN stack",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "aws-sdk": "^2.1286.0",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "dotenv": "^16.0.3",
