@@ -15,6 +15,14 @@ const app = express()
 // Sets express properties to use JSON and URL Encoded features
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    ); 
+    next();
+});
 
 // Links 2 parent routes to the route file and functions
 app.use('/api/goals', require('./routes/goalRoutes'))
